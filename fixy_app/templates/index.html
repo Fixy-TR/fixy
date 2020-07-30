@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+<div class="navbar-fixed">
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><b id="logo-container" href="#" class="brand-logo " style="color:#90EE90;">FIXY</b>
+      <ul class="right hide-on-med-and-down">
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+    </div>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Yazını Düzelt ve Analiz Et</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Girdiğin metindeki yazım hatalarını giderebilir, duygu analizi skoru ve emotion skoru ile metnin duygusal ağırlığını analiz edebilirsin. Ayrıca resmi bir metin veya mail yazmak istiyorsan formal-informal skor ile ne kadar resmi bir yazı yazdığını ölçebilir ve bu skoru arttırabilirsin.
+        <br>
+        </h5>
+      </div>
+
+
+        <div class="row">
+    <form method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <br>
+        </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange" formaction="/predict">Negatif-Pozitif Ağırlık Skoru</button>
+          <button type="submit" class="btn-large waves-effect waves-light blue" formaction="/emotion">Duygu Skoru</button>
+          <button type="submit" class="btn-large waves-effect waves-light green" formaction="/formal">Formal-Informal Skoru</button>
+          <button type="submit" class="btn-large waves-effect waves-light purple" formaction="/rcorrector">Kural Tabanlı Düzeltici</button>
+
+          <br>
+
+      <br>
+
+          <br>
+
+      <br>
+            <br>
+
+      <br>
+
+          <textarea id ="text" name="message" class="materialize-textarea" type=text rows="10" cols="30">{{rcorrect}}</textarea>
+          <label for="text">Buraya Yazın</label>
+
+      <br>
+
+          <br>
+
+      <br>
+            <br>
+
+      <br>
+          <button type="submit" class="btn-large waves-effect waves-light green" formaction="/toformal">Daha Resmi</button>
+           <br>
+
+          <br>
+
+      <br>
+            <br>
+
+      <br>
+          <textarea id ="text3" name="message" class="materialize-textarea" type=text rows="10" cols="30">{{formalform}}</textarea>
+
+
+
+
+
+
+
+    </form>
+</div>
+           <div>
+
+
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Negatif-Pozitif Skor</h5>
+
+            <p class="header center orange-text" style="font-size:200%;"> {{pred}} </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="header center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Duygu Durumu</h5>
+
+            <p class="header center light-blue-text" >{{emotion}}</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Informal-Formal Skoru</h5>
+
+            <p class="header center orange-text">{{formal}}</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <br>
+      <br>
+
+          <div class="row">
+    <form method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <br>
+        </div>
+          <div class="row center">
+         <br>
+
+      <br>
+
+          <br>
+
+      <br>
+
+
+             <br>
+
+          <br>
+              <button type="submit" class="btn-large waves-effect waves-light purple" formaction="/MI_Mİ">Mı-Mi Düzeltici</button>
+
+              <button type="submit" class="btn-large waves-effect waves-light green" formaction="/DE_DA">De-Da Düzeltici</button>
+
+              <button type="submit" class="btn-large waves-effect waves-light blue" formaction="/Kİ">Ki Düzeltici</button>
+
+
+
+<div>
+    <br>
+
+      <br>
+
+          <br>
+
+      <br>
+
+
+          <br>
+
+      <br>
+                    <textarea id="text2" name="message" class="materialize-textarea" type=text rows="10" cols="30">{{ekli}}</textarea>
+                     <label for="text2">Buraya Yazın</label>
+
+      </div>
+
+
+          <br>
+
+
+      <br>
+          </div>
+<br>
+
+      <br>
+
+          <br>
+
+      <br>
+                    <textarea name="message" class="materialize-textarea" type=text rows="10" cols="30"></textarea>
+
+
+
+      </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>
+
+
+
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+            <p class="white-text">Türkçe NLP'de literatürdeki birçok farklı sorunu bir arada çözebilen ve yeni yaklaşımlar getiren open source bir yazım destekleyici/denetleyicisi. </p>
+          <p class="grey-text text-lighten-4"></p>
+
+
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Github Code</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  </body>
+</html>
