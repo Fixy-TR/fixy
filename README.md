@@ -299,9 +299,9 @@ from os.path import join
 
 app.py dosyasını çalıştırarak modellerinizi ön yüze bağlayabilirsiniz.
 
-![alt text](https://github.com/umitylmz/fixy/blob/master/fixy_app_1.jpeg)
+![alt text](https://github.com/umitylmz/fixy/blob/master/IMG_2654.jpg)
 
-![alt text](https://github.com/umitylmz/fixy/blob/master/fixy_app_2.jpeg)
+![alt text](https://github.com/umitylmz/fixy/blob/master/IMG_2655.jpg)
 
 
 #### Temizlenmiş Wikipedi Veriseti
