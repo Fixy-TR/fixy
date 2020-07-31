@@ -22,6 +22,21 @@ Python 3.6+
 # Projeyi Yüklemek İçin
 git clone https://github.com/umitylmz/fixy.git
 
+## DEEPCHECKER KÜTÜPHANESİ
+### DE-DA, Kİ ve Mİ düzeltmesi için yayınlamış olduğumuz DeepChecker kütüphanesini doğrudan pip ile yükleyebilirsiniz.
+kütüphaneyi yüklemek için:
+```bash
+   pip install DeepChecker
+```
+Kullanabileceğiniz fonksiyonlar ve kullanımları:
+> Correct fonksiyonları cümlenin doğru halini döndürmektedir.
+> Check fonksiyonları ise cümlenin sigmoid fonksiyonundan gelen değeri ifade eder. 0'a yakın olması ayrı yazılması gerektiğini göstermektedir
+```py
+from DeepChecker import correct_de, correct_ki, correct_mi, check_de, check_ki, check_mi 
+
+print(correct_de("bu yaz bizimkiler x tatile gelecek")) # doğru hali output olarak gelecek
+print(check_de("bu yaz bizimkiler x tatile gelecek") # sigmoid değeri output olarak dönecek
+```
 ## DE/-DA İÇİN LİTERATÜR KARŞILAŞTIRMASI
 
 | Yapılan Çalışmalar | Doğruluk Oranı |F1 Score|
@@ -78,11 +93,11 @@ Confusion Matrix
 
 | class | precision | recall | f1-score  |support
 | ------ | ------ | ------ | ------ |------ |
-| 0 | 0.9323 | 0.8912 | 0.9113 |30424
-| 1 |  0.8958 |  0.9353 |0.9151|30425
+| 0 | 0.9049 | 0.9397 | 0.9219 |357228
+| 1 |  0.9384 |  0.9030 |0.9204|363818
 
 Data
-Oluşturulan 304244 satır veri içeren etiketli -ki veriseti linki: 
+Oluşturulan 3605229 satır veri içeren etiketli -ki veriseti linki: 
 [Data](https://drive.google.com/file/d/1HLA9z1QoLMQsni70riq8APj0Gp_2nMmg/view?usp=sharing)
 
 # Kİ Düzeltici
@@ -127,14 +142,14 @@ Kütüphaneleri kurduktan sonra modeli yüklüyoruz ve test ediyoruz.
 model.load_weights("/content/Model_mi.h5")
 ```
 ```py
-pred = tokenizer.texts_to_sequences(["sonumuz böyle x olacaktı"])
+pred = tokenizer.texts_to_sequences(["olsun demek x zor artık"])
 maxlen = 7
 padded_pred = pad_sequences(pred, maxlen=maxlen)
 model.predict(padded_pred)
 ```
 ```py
 # 0' yakın çıkması ekin ayrı yazılması gerektiğini gösteriyor.
-array([[0.9990182]], dtype=float32)
+array([[0.04085088]], dtype=float32)
 ```
 Oluşturulan 9507636 satır veri içeren etiketli -mi veriseti linki: 
 [Data](https://drive.google.com/file/d/1vCPsqYSMLOFxCA1WeykVMx1fT-A8etlD/view?usp=sharing)
