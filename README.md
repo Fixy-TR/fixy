@@ -17,6 +17,11 @@ Modelleri pre_trained_weights klasöründe bulunan weightler ile doğrudan yükl
 
 Performans sonuçlarını, karşılaştırmalarını, modeller tarafından ayırt edilen cümle örneklerini ve verisetlerinin drive linklerini aşağıdaki başlıklar altında ayrı ayrı bulabilirsiniz.
 
+# Gereklilikler
+Python 3.6+
+# Projeyi Yüklemek İçin
+git clone https://github.com/umitylmz/fixy.git
+
 ## DE/-DA İÇİN LİTERATÜR KARŞILAŞTIRMASI
 
 | Yapılan Çalışmalar | Doğruluk Oranı |F1 Score|
