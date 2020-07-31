@@ -1,4 +1,7 @@
-# fixy
+# Takım Üyeleri
+> - Ümit Yılmaz @umitylmz
+> - Büşra Gökmen @newsteps8
+# FIXY
 
 Amacımız Türkçe NLP literatüründeki birçok farklı sorunu bir arada çözebilen, eşsiz yaklaşımlar öne süren ve literatürdeki çalışmaların eksiklerini gideren open source bir yazım destekleyicisi/denetleyicisi oluşturmak. Kullanıcıların yazdıkları metinlerdeki yazım yanlışlarını derin öğrenme yaklaşımıyla çözüp aynı zamanda metinlerde anlamsal analizi de gerçekleştirerek bu bağlamda ortaya çıkan yanlışları da fark edip düzeltebilmek.
 
@@ -29,8 +32,8 @@ Kullanılan metodoloji tamamiyle özgündür ve Literatürdeki diğer çalışma
 
 # DE Düzeltici
 
-> Accuracy on Test Data: 92.13%
-> ROC AUC on Test Data: 0.921
+> - Accuracy on Test Data: 92.13%
+> - ROC AUC on Test Data: 0.921
 
 Confusion Matrix
 [336706  20522]
@@ -47,8 +50,8 @@ Oluşturulan 304244 satır veri içeren etiketli -ki veriseti linki:
 
 # Kİ Düzeltici
 
-> Accuracy on Test Data: 91.32%
-> ROC AUC on Test Data: 0.913
+> - Accuracy on Test Data: 91.32%
+> - ROC AUC on Test Data: 0.913
 
 Confusion Matrix
  [27113  3311]
@@ -68,8 +71,8 @@ Oluşturulan 9507636 satır veri içeren etiketli -mi veriseti linki:
 [https://drive.google.com/file/d/1vCPsqYSMLOFxCA1WeykVMx1fT-A8etlD/view?usp=sharing]
 
 
-> Accuracy on Test Data: 95.41%
-> ROC AUC on Test Data: 0.954
+> - Accuracy on Test Data: 95.41%
+> - ROC AUC on Test Data: 0.954
 
 Confusion Matrix
 [910361  40403]
@@ -84,7 +87,192 @@ Literatürde ki ve mi ekleri üzerine yapılmış çalışmaya rastlanamaması p
 
 # Anlamsal Metin Analizi
 
+### Türkçe Sentiment Analizi
+
+Üç katmanlı LSTM nöral ağıyla oluşturduğumuz modeli yaklaşık 260000 tane pozitif ve negatif olarak etiketlenmiş sentiment verisiyle eğittik. Rastgele oluşturduğumuz kelime vektörleri ile birlikte embedding layeri nöral ağımıza ekledik. 10 Epoch ile eğittiğimiz modelden %94.57 accuracy(doğruluk) skoru elde ettik.
+
+# Gerekli Kütüphaneler
+
+```py
+import numpy as np
+import pandas as pd
+from keras.preprocessing import sequence
+from keras.models import Sequential
+from keras.layers import Dense, Embedding, LSTM,  Dropout
+from tensorflow.python.keras.preprocessing.text import Tokenizer
+from tensorflow.python.keras.preprocessing.sequence import pad_sequences
+```
+Kütüphaneleri yükledikten sonra keras ile modeli yüklüyoruz.
+
+```py
+
+from keras.models import load_model
+
+model = load_model('hack_model.h5')  # modeli yüklüyoruz
+
+```
+Test inputları oluşturuyoruz.
+
+```py
+#test yorumları(inputlar)
+text1 = "böyle bir şeyi kabul edemem"
+text2 = "tasarımı güzel ancak ürün açılmış tavsiye etmem"
+text3 = "bu işten çok sıkıldım artık"
+text4 = "kötü yorumlar gözümü korkutmuştu ancak hiçbir sorun yaşamadım teşekkürler"
+text5 = "yaptığın işleri hiç beğenmiyorum"
+text6 = "tam bir fiyat performans ürünü beğendim"
+text7 = "Bu ürünü beğenmedim"
+texts = [text1, text2,text3,text4,text5,text6,text7]
+```
+Test inputları için tokenize ve padding yapıyoruz
+```py
+#tokenize
+tokens = turkish_tokenizer.texts_to_sequences(texts)
+#padding
+tokens_pad = pad_sequences(tokens, maxlen=max_tokens)
+```
+model bu inputların hangi duyguya yakın olduğunu tahminliyor
+```py
+for i in model.predict(tokens_pad):
+    if i < 0.5:
+        print("negatif")#negatif yorum yapmış
+    else
+        print("pozitif")#pozitif yorum yapmış
+```
+```py
+negative
+negative
+negative
+positive
+negative
+positive
+positive
+```
+
+Oluşturulan 260000 satır veri içeren etiketli pozitif-negatif veriseti linki:
+[https://drive.google.com/file/d/1--Az8CqFp4OljKHEbksim0ifIlFtAXDU/view?usp=sharing]
+
+### Türkçe Formal-Informal Metin Analizi
+
+Üç katmanlı LSTM nöral ağıyla oluşturduğumuz modeli twitter, newspaper ve wikipediadan aldığımız verinin yaklaşık 2504900 tanesini formal(düzgün) ve informal(düzgün olmayan) olarak etiketledik ve nöral ağımızı eğittik. Rastgele oluşturduğumuz kelime vektörleri ile birlikte embedding layeri nöral ağımıza ekledik. 10 Epoch ile eğittiğimiz modelden % 95.37 accuracy(doğruluk) skoru elde ettik.
+
+# Gerekli Kütüphaneler
+
+```py
+import numpy as np
+import pandas as pd
+from keras.preprocessing import sequence
+from keras.models import Sequential
+from keras.layers import Dense, Embedding, LSTM,  Dropout
+from tensorflow.python.keras.preprocessing.text import Tokenizer
+from tensorflow.python.keras.preprocessing.sequence import pad_sequences
+```
+Kütüphaneleri yükledikten sonra keras ile modeli yüklüyoruz.
+
+```py
+
+from keras.models import load_model
+
+model = load_model('MODEL_FORMAL.h5')  # modeli yüklüyoruz
+
+```
+Test inputları oluşturuyoruz.
+
+```py
+# test inputları oluşturuyoruz
+text1 = "atatürk, bu görevi en uzun süre yürüten kişi olmuştur."
+text2="bdjfhdjfhdjkhj"
+text3 = "hiç resimde gösterildiği gibi değil..."
+text4 = "bir yirminci yüzyıl popüler kültür ikonu haline gelen ressam, resimlerinin yanı sıra inişli çıkışlı özel yaşamı ve politik görüşleri ile tanınır. "
+text5 = "fransız halkı önceki döneme göre büyük bir evrim geçirmektedir. halk bilinçlenmektedir ve sarayın, kralın, seçkinlerin denetiminden çıkmaya başlamıştır. şehirlerde yaşayan pek çok burjuva, büyük bir atılım içindedir. kitaplar yaygınlaşmakta, aileler çocuklarını üniversitelere göndererek sağlam bir gelecek kurma yolunu tutarak kültürel seviyeyi yükseltmektedir. bağımsız yayıncıların çıkardıkları gazete, bildiri ve broşürler, kitlesel bilinçlenmeye yol açmaktadır. bu koşullar da toplumsal değişim taleplerinin olgunlaşmasına yol açmıştır."
+text6 = "bunu çıkardım söylediklerinden"
+text7 = "Bu koşullar da toplumsal değişim taleplerinin olgunlaşmasına yol açmıştır."
+text8="bu çok saçma yaa"
+text9="bana böyle bir yetki verilmedi."
+text10="napıcaz bu işi böyle"
+text11="Öncelikle Mercedes-Benz’e olan ilgin için teşekkür ederiz."
+text12="Ekibimizle çalışma isteğin için teşekkür ediyor, sağlıklı günler ve kariyerinde başarılar diliyoruz. Farklı etkinlik ve programlarda tekrar bir araya gelmek dileğiyle."
+text13="Ben de öyle olduğunu düşünmüyordum ama gittik yine de jzns"
+texts = [text1, text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13]
+```
+Test inputları için tokenize ve padding yapıyoruz
+```py
+#tokenize
+tokens = tokenizer.texts_to_sequences(texts)
+#padding
+tokens_pad = pad_sequences(tokens, maxlen=max_tokens)
+```
+model bu inputların hangi duyguya yakın olduğunu tahminliyor
+```py
+#test verisini tahminleme
+for i in model.predict(tokens_pad):
+  if i < 0.5:
+    print("informal")
+  else:
+    print("formal")
+```
+```py
+formal
+informal
+informal
+formal
+formal
+informal
+formal
+informal
+informal
+informal
+formal
+informal
+informal
+```
+Oluşturulan 1204900 satır veri içeren etiketli formal veriseti linki:
+[https://drive.google.com/file/d/1-8UDP-WYRRXEcbr1HxBwuXSp1GW8Ta5-/view?usp=sharing]
+Oluşturulan 3934628 satır veri içeren etiketli informal veriseti linki:
+[https://drive.google.com/file/d/1UBxgxLPv_afebNgm9sFt2n2WjMwgc_YK/view?usp=sharing]
 
 
+### Türkçe Emotion(Duygu) Metin Analizi
+ 6  farklı duygu(Fear: Korku,Happy: Sevinç,Sadness: Üzüntü,Disgust: İğrenme-Bıkkınlık,Anger: Öfke,Suprise: Şaşkınlık) ile etiketli 27 verinin bulunduğu veriseti ile SVM linearSVC,MultinomialNB,LogisticRegression, RandomForestClassifier modellerini eğittik. Modellemeden önce verideki kelimeleri vektörize etmek için tfidf vektörizerı ve türkçe stopword listesini kullandık. Bu modeller arasında en yükse accuracy oranını LinearSVC modeli ile elde ettik.
+ 
+ 
+# Model Accuracy Oranlarının Karşılaştırılması
 
+
+# Gerekli Kütüphaneler
+
+```py
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import LinearSVC
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+```
+Kütüphaneleri yükledikten sonra load_model ile modeli yüklüyoruz ve test ediyoruz.
+
+```py
+
+# modeli yükleyip test ediyoruz
+tfidf = TfidfVectorizer(sublinear_tf=True, min_df=5, norm='l2', encoding='latin-1', ngram_range=(1, 2), stop_words=myList)
+
+loaded_model = pickle.load(open("emotion_model.pickle", 'rb'))
+corpus = [
+         "İşlerin ters gitmesinden endişe ediyorum",
+         "çok mutluyum",
+         "sana çok kızgınım",
+         "beni şaşırttın",
+        ]
+tfidf.fit_transform(df.Entry).toarray()
+features = tfidf.transform(corpus).toarray()
+result = loaded_model.predict(features)
+print(result)
+
+```
+```py
+'Fear' 'Happy' 'Anger' 'Suprise']
+```
+
+Bu model için kullandığımız verisetini [http://demir.cs.deu.edu.tr/tremo-dataset/] adresinden istedik. Ayrıca bu verisetinin bulunduğu drive linki: [https://drive.google.com/file/d/1t0Ffu1edduOi8HNfGDUPcq6H5Iqfi4GF/view?usp=sharing]
 
