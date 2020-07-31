@@ -127,14 +127,14 @@ Kütüphaneleri kurduktan sonra modeli yüklüyoruz ve test ediyoruz.
 model.load_weights("/content/Model_mi.h5")
 ```
 ```py
-pred = tokenizer.texts_to_sequences(["olsun demek x zor artık"])
+pred = tokenizer.texts_to_sequences(["sonumuz böyle x olacaktı"])
 maxlen = 7
 padded_pred = pad_sequences(pred, maxlen=maxlen)
 model.predict(padded_pred)
 ```
 ```py
 # 0' yakın çıkması ekin ayrı yazılması gerektiğini gösteriyor.
-array([[0.04085088]], dtype=float32)
+array([[0.9990182]], dtype=float32)
 ```
 Oluşturulan 9507636 satır veri içeren etiketli -mi veriseti linki: 
 [Data](https://drive.google.com/file/d/1vCPsqYSMLOFxCA1WeykVMx1fT-A8etlD/view?usp=sharing)
