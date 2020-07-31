@@ -238,6 +238,13 @@ Oluşturulan 3934628 satır veri içeren etiketli informal veriseti linki:
  
 # Model Accuracy Oranlarının Karşılaştırılması
 
+|Model|Accuracy(Doğruluk Oranı)|
+|-----|-----|
+|LinearSVC |0.80|
+|LogisticRegression |0.79|
+|MultinomialNB|0.78|
+|RandomForestClassifier|0.60|
+
 
 # Gerekli Kütüphaneler
 
