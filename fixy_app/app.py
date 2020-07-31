@@ -13,6 +13,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from wtforms.validators import DataRequired
 import pandas as pd
+from DeepChecker import correct_de, correct_ki, correct_mi
 from os.path import join
 from jpype import JClass, JString, getDefaultJVMPath, shutdownJVM, startJVM,java
 ZEMBEREK_PATH: str = join('..', '..', 'bin', '/home/busra/İndirilenler/zemberek-full.jar')
@@ -94,7 +95,7 @@ def formall():
 def mı_mi():
     output = [x for x in request.form.values()]
     output=output[0] #tüm inputu string halinde alıyor
-    output = check_1(output)
+    output = correct_mi(output)
     return render_template('index.html',
                            ekli=output)
 
@@ -102,7 +103,7 @@ def mı_mi():
 def de_da():
     output = [x for x in request.form.values()]
     output=output[0] #tüm inputu string halinde alıyor
-    output = check_2(output)
+    output = correct_de(output)
     return render_template('index.html',
                            ekli=output)
 
@@ -110,21 +111,9 @@ def de_da():
 def ki():
     output = [x for x in request.form.values()]
     output=output[0] #tüm inputu string halinde alıyor
-    output = check_3(output)
+    output = correct_ki(output)
     return render_template('index.html',
                            ekli=output)
-
-def check_1(text):#mı mi için model ile alına inputu düzeltcek
-    #işlemler
-    return text
-
-def check_2(text):#de da için model ile alına inputu düzeltcek
-    #işlemler
-    return text
-
-def check_3(text):#ki için model ile alına inputu düzeltcek
-    #işlemler
-    return text
 
 
 def sentiment(text):
