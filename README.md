@@ -30,7 +30,7 @@ Performans sonuçlarını, karşılaştırmalarını, modeller tarafından ayır
 
 Kullanılan metodoloji tamamiyle özgündür ve Literatürdeki diğer çalışmalardan farklı bir yaklaşıma dayanmaktadır. Performans sonuçları yaklaşımın doğruluğunu ispatlar niteliktedir.
 
-# DE-DA,Kİ ve Mİ Gerekli Kütüphaneler
+# DE-DA, Kİ ve Mİ İçin Gerekli Kütüphaneler
 
 ```py
 from google.colab import drive
@@ -46,7 +46,7 @@ from keras.layers.embeddings import Embedding
 from keras.models import Model, Sequential
 from keras import initializers, regularizers, constraints, optimizers, layers
 ```
-# DE Düzeltici
+# DE-DA Düzeltici
 
 Kütüphaneleri kurduktan sonra modeli yüklüyoruz ve test ediyoruz.
 
@@ -82,6 +82,24 @@ Oluşturulan 304244 satır veri içeren etiketli -ki veriseti linki:
 
 # Kİ Düzeltici
 
+Kütüphaneleri kurduktan sonra modeli yüklüyoruz ve test ediyoruz.
+
+```py
+model.load_weights("/content/Model_ki.h5")
+```
+```py
+pred = tokenizer.texts_to_sequences(["desem x böyle böyle oldu"])
+maxlen = 7
+padded_pred = pad_sequences(pred, maxlen=maxlen)
+model.predict(padded_pred)
+
+```
+```py
+# 0' yakın çıkması ekin ayrı yazılması gerektiğini gösteriyor.
+array([[0.00843348]], dtype=float32)
+```
+
+
 > - Accuracy on Test Data: 91.32%
 > - ROC AUC on Test Data: 0.913
 
@@ -97,8 +115,22 @@ Confusion Matrix
 Oluşturulan 304244 satır veri içeren etiketli -ki veriseti linki: 
 [Data](https://drive.google.com/file/d/1HLA9z1QoLMQsni70riq8APj0Gp_2nMmg/view?usp=sharing)
 
-# Mİ Düzeltici
+# Mİ-MI-MU-MÜ Düzeltici
+Kütüphaneleri kurduktan sonra modeli yüklüyoruz ve test ediyoruz.
 
+```py
+model.load_weights("/content/Model_mi.h5")
+```
+```py
+pred = tokenizer.texts_to_sequences(["olsun demek x zor artık"])
+maxlen = 7
+padded_pred = pad_sequences(pred, maxlen=maxlen)
+model.predict(padded_pred)
+```
+```py
+# 0' yakın çıkması ekin ayrı yazılması gerektiğini gösteriyor.
+array([[0.04085088]], dtype=float32)
+```
 Oluşturulan 9507636 satır veri içeren etiketli -mi veriseti linki: 
 [Data](https://drive.google.com/file/d/1vCPsqYSMLOFxCA1WeykVMx1fT-A8etlD/view?usp=sharing)
 
