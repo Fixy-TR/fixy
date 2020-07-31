@@ -278,8 +278,30 @@ print(result)
 
 ```
 ```py
-'Fear' 'Happy' 'Anger' 'Suprise']
+['Fear' 'Happy' 'Anger' 'Suprise']
 ```
 Bu model için kullandığımız verisetini [TREMODATA](http://demir.cs.deu.edu.tr/tremo-dataset/) adresinden
 istedik. Ayrıca bu verisetinin bulunduğu drive linki: [Data](https://drive.google.com/file/d/1t0Ffu1edduOi8HNfGDUPcq6H5Iqfi4GF/view?usp=sharing)
+
+# fixy_app(Flask API)
+
+Virtual environment ortamında oluşturduğunuz Flask API yardımı ile modelleri bir arayüzde gösterebilirsiniz. Bunun için gerekli kütüphaneler:
+
+```py
+from flask_wtf import FlaskForm
+from flask import Flask, request, render_template,redirect
+import pickle
+import re
+from wtforms.validators import DataRequired
+import pandas as pd
+from os.path import join
+```
+
+app.py dosyasını çalıştırarak modellerinizi ön yüze bağlayabilirsiniz.
+
+
+#### Temizlenmiş Wikipedi Veriseti
+
+2364897 satırlık temizlenmiş Türkçe Wikipedia verisetini herhangi bir Türkçe NLP çalışmasında kullanabilirsiniz:)
+[Wikipedia Veriseti](https://drive.google.com/file/d/1ujQMxIUEXuIOihU4-cRhGwMrR3YVoYi3/view?usp=sharing)
 
