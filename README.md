@@ -367,6 +367,14 @@ app.py dosyasını çalıştırarak modellerinizi ön yüze bağlayabilirsiniz.
 
 ![alt text](https://github.com/umitylmz/fixy/blob/master/IMG_2655.jpg)
 
+# Kural-Tabanlı Düzeltici ve Daha Resmi(Formal) Yaklaşım
+
+Backend kısmında kural tabanlı düzeltici için [Zemberek'in Normalization modülünü](https://github.com/ozturkberkay/Zemberek-Python-Examples/tree/master/examples/normalization) kullandık. Ayrıca yine backend kısmında metinlerin daha formal halini görebilmek için [Zemberek'in Informal Word Analysis modülünü](https://github.com/ozturkberkay/Zemberek-Python-Examples/blob/master/examples/morphology/informal_words_analysis.py) kullandık.
+
+# Noisy-Kirli Veri Üretimi
+
+Deep Learning Tabanlı spell-checker modellerinin yazım yanlışını öğrenmesi için düzgün cümle-cümlenin hatalı hali şeklinde veri üretmek gerekebiliyor. Türkçede sıkça yapılan yazım yanlışlarını belirleyerek ve bunları kullanarak düzgün kelimeyi bozan noisy fonksiyonları oluşturduk. Böylece modelleme için kirli veri elde edebiliyoruz. Fonksiyonları [Noice_Adder_Functions.ipynb](https://github.com/umitylmz/fixy/blob/master/Noise_Adder_Functions.ipynb) dosyasında bulabilirsiniz.
+
 
 #### Temizlenmiş Wikipedi Veriseti
 
