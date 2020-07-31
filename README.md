@@ -30,7 +30,39 @@ Performans sonuçlarını, karşılaştırmalarını, modeller tarafından ayır
 
 Kullanılan metodoloji tamamiyle özgündür ve Literatürdeki diğer çalışmalardan farklı bir yaklaşıma dayanmaktadır. Performans sonuçları yaklaşımın doğruluğunu ispatlar niteliktedir.
 
+# DE-DA,Kİ ve Mİ Gerekli Kütüphaneler
+
+```py
+from google.colab import drive
+import pandas as pd
+import keras
+import pickle
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+from sklearn.model_selection import train_test_split
+import tensorflow as tf
+from keras.layers import Dense, LSTM, Flatten, Embedding, Dropout , Activation, GRU, Flatten, Input, Bidirectional, GlobalMaxPool1D, Convolution1D, TimeDistributed, Bidirectional
+from keras.layers.embeddings import Embedding
+from keras.models import Model, Sequential
+from keras import initializers, regularizers, constraints, optimizers, layers
+```
 # DE Düzeltici
+
+Kütüphaneleri kurduktan sonra modeli yüklüyoruz ve test ediyoruz.
+
+```py
+model.load_weights("/content/Model_deda.h5")
+```
+```py
+pred = tokenizer.texts_to_sequences(["olsun demek x zor artık"])
+maxlen = 7
+padded_pred = pad_sequences(pred, maxlen=maxlen)
+model.predict(padded_pred)
+```
+```py
+# 0' yakın çıkması ekin ayrı yazılması gerektiğini gösteriyor.
+array([[0.04085088]], dtype=float32)
+```
 
 > - Accuracy on Test Data: 92.13%
 > - ROC AUC on Test Data: 0.921
