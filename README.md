@@ -401,3 +401,8 @@ Deep Learning Tabanlı spell-checker modellerinin yazım yanlışını öğrenme
 2364897 satırlık temizlenmiş Türkçe Wikipedia verisetini herhangi bir Türkçe NLP çalışmasında kullanabilirsiniz:)
 [Wikipedia Veriseti](https://drive.google.com/file/d/1ujQMxIUEXuIOihU4-cRhGwMrR3YVoYi3/view?usp=sharing)
 
+# Referanslar
+> https://tscorpus.com
+> https://github.com/ozturkberkay/Zemberek-Python-Examples
+> https://www.kaggle.com/mustfkeskin/turkish-wikipedia-dump
+> http://demir.cs.deu.edu.tr/tremo-dataset/
