@@ -44,9 +44,9 @@ Confusion Matrix
 | 0 | 0.9323 | 0.8912 | 0.9113 |30424
 | 1 |  0.8958 |  0.9353 |0.9151|30425
 
-
+Data
 Oluşturulan 304244 satır veri içeren etiketli -ki veriseti linki: 
-[https://drive.google.com/file/d/1HLA9z1QoLMQsni70riq8APj0Gp_2nMmg/view?usp=sharing]
+[Data](https://drive.google.com/file/d/1HLA9z1QoLMQsni70riq8APj0Gp_2nMmg/view?usp=sharing)
 
 # Kİ Düzeltici
 
@@ -63,12 +63,12 @@ Confusion Matrix
 | 1 |  0.8958 |  0.9353 |0.9151|30425
 
 Oluşturulan 304244 satır veri içeren etiketli -ki veriseti linki: 
-[https://drive.google.com/file/d/1HLA9z1QoLMQsni70riq8APj0Gp_2nMmg/view?usp=sharing
+[Data](https://drive.google.com/file/d/1HLA9z1QoLMQsni70riq8APj0Gp_2nMmg/view?usp=sharing)
 
 # Mİ Düzeltici
 
 Oluşturulan 9507636 satır veri içeren etiketli -mi veriseti linki: 
-[https://drive.google.com/file/d/1vCPsqYSMLOFxCA1WeykVMx1fT-A8etlD/view?usp=sharing]
+[Data](https://drive.google.com/file/d/1vCPsqYSMLOFxCA1WeykVMx1fT-A8etlD/view?usp=sharing)
 
 
 > - Accuracy on Test Data: 95.41%
@@ -150,7 +150,7 @@ positive
 ```
 
 Oluşturulan 260000 satır veri içeren etiketli pozitif-negatif veriseti linki:
-[https://drive.google.com/file/d/1--Az8CqFp4OljKHEbksim0ifIlFtAXDU/view?usp=sharing]
+[Data](https://drive.google.com/file/d/1--Az8CqFp4OljKHEbksim0ifIlFtAXDU/view?usp=sharing)
 
 ### Türkçe Formal-Informal Metin Analizi
 
@@ -227,13 +227,13 @@ informal
 informal
 ```
 Oluşturulan 1204900 satır veri içeren etiketli formal veriseti linki:
-[https://drive.google.com/file/d/1-8UDP-WYRRXEcbr1HxBwuXSp1GW8Ta5-/view?usp=sharing]
+[Data](https://drive.google.com/file/d/1-8UDP-WYRRXEcbr1HxBwuXSp1GW8Ta5-/view?usp=sharing)
 Oluşturulan 3934628 satır veri içeren etiketli informal veriseti linki:
-[https://drive.google.com/file/d/1UBxgxLPv_afebNgm9sFt2n2WjMwgc_YK/view?usp=sharing]
+[Data](https://drive.google.com/file/d/1UBxgxLPv_afebNgm9sFt2n2WjMwgc_YK/view?usp=sharing)
 
 
 ### Türkçe Emotion(Duygu) Metin Analizi
- 6  farklı duygu(Fear: Korku,Happy: Sevinç,Sadness: Üzüntü,Disgust: İğrenme-Bıkkınlık,Anger: Öfke,Suprise: Şaşkınlık) ile etiketli 27 verinin bulunduğu veriseti ile SVM linearSVC,MultinomialNB,LogisticRegression, RandomForestClassifier modellerini eğittik. Modellemeden önce verideki kelimeleri vektörize etmek için tfidf vektörizerı ve türkçe stopword listesini kullandık. Bu modeller arasında en yükse accuracy oranını LinearSVC modeli ile elde ettik.
+ 6  farklı duygu(Fear: Korku,Happy: Sevinç,Sadness: Üzüntü,Disgust: İğrenme-Bıkkınlık,Anger: Öfke,Suprise: Şaşkınlık) ile etiketli 27350 verinin bulunduğu veriseti ile SVM linearSVC,MultinomialNB,LogisticRegression, RandomForestClassifier modellerini eğittik. Modellemeden önce verideki kelimeleri vektörize etmek için tfidf vektörizerı ve türkçe stopword listesini kullandık. Bu modeller arasında en yükse accuracy oranını LinearSVC modeli ile elde ettik.
  
  
 # Model Accuracy Oranlarının Karşılaştırılması
@@ -273,6 +273,6 @@ print(result)
 ```py
 'Fear' 'Happy' 'Anger' 'Suprise']
 ```
-
-Bu model için kullandığımız verisetini [http://demir.cs.deu.edu.tr/tremo-dataset/] adresinden istedik. Ayrıca bu verisetinin bulunduğu drive linki: [https://drive.google.com/file/d/1t0Ffu1edduOi8HNfGDUPcq6H5Iqfi4GF/view?usp=sharing]
+Bu model için kullandığımız verisetini [TREMODATA](http://demir.cs.deu.edu.tr/tremo-dataset/) adresinden
+istedik. Ayrıca bu verisetinin bulunduğu drive linki: [Data](https://drive.google.com/file/d/1t0Ffu1edduOi8HNfGDUPcq6H5Iqfi4GF/view?usp=sharing)
 
