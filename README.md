@@ -24,7 +24,7 @@ git clone https://github.com/Fixy-TR/fixy.git
 
 ## DEEPCHECKER KÜTÜPHANESİ
 ### https://pypi.org/project/DeepChecker/
-### https://github.com/umitylmz/DeepChecker
+### https://github.com/Fixy-TR/DeepChecker
 ### DE-DA, Kİ ve Mİ düzeltmesi için yayınlamış olduğumuz DeepChecker kütüphanesini doğrudan pip ile yükleyebilirsiniz.
 kütüphaneyi yüklemek için:
 ```bash
