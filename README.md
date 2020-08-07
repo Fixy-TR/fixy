@@ -20,7 +20,7 @@ Performans sonuçlarını, karşılaştırmalarını, modeller tarafından ayır
 # Gereklilikler
 Python 3.6+
 # Projeyi Yüklemek İçin
-git clone https://github.com/umitylmz/fixy.git
+git clone https://github.com/Fixy-TR/fixy.git
 
 ## DEEPCHECKER KÜTÜPHANESİ
 ### https://pypi.org/project/DeepChecker/
