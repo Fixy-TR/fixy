@@ -405,9 +405,9 @@ Deep Learning Tabanlı spell-checker modellerinin yazım yanlışını öğrenme
 [Wikipedia Veriseti](https://drive.google.com/file/d/1ujQMxIUEXuIOihU4-cRhGwMrR3YVoYi3/view?usp=sharing)
 
 # Referanslar
-| 1- https://acl-bg.org/proceedings/2019/RANLP%202019/pdf/RANLP009.pdf
-| 2- https://tscorpus.com
-| 3- https://github.com/ozturkberkay/Zemberek-Python-Examples
-| 4- https://www.kaggle.com/mustfkeskin/turkish-wikipedia-dump
-| 5- http://demir.cs.deu.edu.tr/tremo-dataset/
+> - 1- https://acl-bg.org/proceedings/2019/RANLP%202019/pdf/RANLP009.pdf
+> - 2- https://tscorpus.com
+> - 3- https://github.com/ozturkberkay/Zemberek-Python-Examples
+> - 4- https://www.kaggle.com/mustfkeskin/turkish-wikipedia-dump
+> - 5- http://demir.cs.deu.edu.tr/tremo-dataset/
 
