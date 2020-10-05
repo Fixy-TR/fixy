@@ -36,19 +36,19 @@ Kullanabileceğiniz fonksiyonlar ve kullanımları:
 ```py
 from DeepChecker import correct_de, correct_ki, correct_mi, check_de, check_ki, check_mi 
 
-print(correct_de("bu yaz bizimkiler x tatile gelecek")) # doğru hali output olarak gelecek
-print(check_de("bu yaz bizimkiler x tatile gelecek") # sigmoid değeri output olarak dönecek
+print(correct_de("bu yaz bizimkiler de tatile gelecek")) # doğru hali output olarak gelecek
+print(check_de("bu yaz bizimkiler de tatile gelecek") # sigmoid değeri output olarak dönecek
 ```
 ## DE/-DA İÇİN LİTERATÜR KARŞILAŞTIRMASI
 
-| Yapılan Çalışmalar | Doğruluk Oranı |F1 Score|
-| ------ | ------ | ------ |
-| Fixy |%92.13|%92.23|
-| Boğaziçi | %76.48 |%86.67|
-| Google Docs | %34 |%--|
-| Microsoft Office  |%29|%--|
-| ITU | %0 |%--|
-| Libra Office | %0 |%--|
+| Yapılan Çalışmalar | Doğruluk Oranı |
+| ------ | ------ | 
+| Fixy |%87|
+| Boğaziçi | %78 |
+| Google Docs | %34 |
+| Microsoft Office  |%29|
+| ITU | %0 |
+| Libra Office | %0 |
 
 Kullanılan metodoloji tamamiyle özgündür ve Literatürdeki diğer çalışmalardan farklı bir yaklaşıma dayanmaktadır. Performans sonuçları yaklaşımın doğruluğunu ispatlar niteliktedir.
 
