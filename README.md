@@ -50,7 +50,8 @@ print(check_de("bu yaz bizimkiler de tatile gelecek") # sigmoid değeri output o
 | ITU | %0 |
 | Libra Office | %0 |
 
-Kullanılan metodoloji tamamiyle özgündür ve Literatürdeki diğer çalışmalardan farklı bir yaklaşıma dayanmaktadır. Performans sonuçları yaklaşımın doğruluğunu ispatlar niteliktedir.
+Boğaziçi Universitesi tarafından oluşturulmuş 100 zor cümle ile test edilmiştir.
+Kullanılan metodoloji tamamiyle özgündür ve Literatürdeki diğer çalışmalardan farklı bir yaklaşıma dayanmaktadır. Performans sonuçlarındaki fark yaklaşımın doğruluğunu ispatlar niteliktedir.
 
 # DE-DA, Kİ ve Mİ İçin Gerekli Kütüphaneler
 
@@ -404,7 +405,9 @@ Deep Learning Tabanlı spell-checker modellerinin yazım yanlışını öğrenme
 [Wikipedia Veriseti](https://drive.google.com/file/d/1ujQMxIUEXuIOihU4-cRhGwMrR3YVoYi3/view?usp=sharing)
 
 # Referanslar
-> https://tscorpus.com
-> https://github.com/ozturkberkay/Zemberek-Python-Examples
-> https://www.kaggle.com/mustfkeskin/turkish-wikipedia-dump
-> http://demir.cs.deu.edu.tr/tremo-dataset/
+> 1- https://acl-bg.org/proceedings/2019/RANLP%202019/pdf/RANLP009.pdf
+> 2- https://tscorpus.com
+> 3- https://github.com/ozturkberkay/Zemberek-Python-Examples
+> 4- https://www.kaggle.com/mustfkeskin/turkish-wikipedia-dump
+> 5- http://demir.cs.deu.edu.tr/tremo-dataset/
+
