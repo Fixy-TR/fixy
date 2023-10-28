@@ -1,5 +1,5 @@
 # Takım Üyeleri
-> - Ümit Yılmaz [@umitylmz](https://github.com/umitylmz)
+> - Ümit Yılmaz [@umitylmz](https://github.com/ylmz-dev)
 > - Büşra Gökmen [@newsteps8](https://github.com/newsteps8)
 # FIXY
 
